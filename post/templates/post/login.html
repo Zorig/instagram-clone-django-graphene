@@ -1,0 +1,10 @@
+{% extends 'post/base.html' %}
+<!--Title-->
+{% block title %}Login{% endblock title %}
+
+<!--Content-->
+{% block content %}
+<h4>Login</h4>
+{% for backend in backends.backends %}
+<a href="{% url 'social:begin' backend %}">{{ backend }}</a>
+{% endfor %} {% endblock content %}

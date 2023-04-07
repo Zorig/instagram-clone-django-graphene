@@ -1,0 +1,52 @@
+[tool.black]
+line-length = 120
+include = '\.py$'
+extend-exclude = '''
+/(
+	|migrations
+)/
+'''
+
+[tool.coverage.run]
+branch = true
+omit = [
+  "*/.venv/*",
+  "*/factory.py",
+  "*/migrations/*.py",
+  "*/tests.py",
+  "*/tests/*.py",
+  "*/*mixins.py",
+	"*/account/models.py",
+  "manage.py",
+  "*/settings/*.py"
+]
+
+[tool.coverage.report]
+exclude_lines = [
+  "pragma: no cover",
+  "if settings.DEBUG",
+  "def __str__",
+  "def get_queryset",
+  "raise NotImplementedError"
+]
+omit = [
+  "*/.venv/*",
+  "*/factory.py",
+  "*/migrations/*.py",
+  "*/tests.py",
+  "*/tests/*.py",
+  "*/*mixins.py",
+	"*/account/models.py",
+  "manage.py",
+  "*/settings/*.py"
+]
+show_missing = true
+skip_covered = true
+skip_empty = true
+precision = 2
+
+[tool.isort]
+profile = "black"
+skip_glob = "*/migrations/*.py"
+
+
